@@ -94,7 +94,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ./caisse_app_scaled/magasin/Dockerfile
+          file: ./caisse_app_scaled/magasin/Dockerfile
           push: true
           tags: ${{ env.DOCKER_IMAGE_MAGASIN }}:latest
       
@@ -102,7 +102,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ./caisse_app_scaled/maison_mere/Dockerfile
+          file: ./caisse_app_scaled/maison_mere/Dockerfile
           push: true
           tags: ${{ env.DOCKER_IMAGE_MERE }}:latest
       
@@ -110,6 +110,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ./caisse_app_scaled/centre_logistique/Dockerfile
+          file: ./caisse_app_scaled/centre_logistique/Dockerfile
           push: true
           tags: ${{ env.DOCKER_IMAGE_LOGISTICS }}:latest
