@@ -20,6 +20,16 @@ type Body struct {
 func newDataApi() *fiber.App {
 	// api mount
 	api := fiber.New(fiber.Config{})
+
+	api.Post("/login", func(c *fiber.Ctx) error {
+		employe := c.FormValue("username")
+		role := c.FormValue("role")
+		if !mere.Login(employe, role) {
+			return c.Status(400).Render("login", nil)
+		}
+		return c.SendStatus(200)
+	})
+
 	api.Post("/notify", func(c *fiber.Ctx) error {
 		var b Body
 		if err := c.BodyParser(&b); err != nil {

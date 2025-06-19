@@ -29,7 +29,7 @@ func Nom() (string, error) {
 }
 
 func Login(n string) bool {
-	resp, err := http.PostForm(API_MERE+"/login", map[string][]string{
+	resp, err := http.PostForm(API_MERE+"/api/login", map[string][]string{
 		"username": {n},
 	})
 	if err != nil {

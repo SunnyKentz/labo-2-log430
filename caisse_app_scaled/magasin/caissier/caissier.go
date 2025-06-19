@@ -86,7 +86,7 @@ func Nom() (string, error) {
 	return "", fmt.Errorf("no instances")
 }
 func login(nom string) bool {
-	resp, err := http.PostForm(API_MERE+"/login", map[string][]string{
+	resp, err := http.PostForm(API_MERE+"/api/login", map[string][]string{
 		"username": {nom},
 		"role":     {"commis"},
 	})

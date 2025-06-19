@@ -11,6 +11,7 @@ EXPOSE 8080
 ENV DB_PORT=5432
 ENV DB_USER=postgres
 ENV DB_PASSWORD=postgres
+ENV GATEWAY=172.17.0.1
 
 # Run the application
 CMD ["./app"]

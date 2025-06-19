@@ -68,7 +68,7 @@ services:
       - "5434:5432"
     volumes:
       - postgres_data_mere:/var/lib/postgresql/data
-      # - ./initMere.sql:/docker-entrypoint-initdb.d/initMere.sql
+      - ./initMere.sql:/docker-entrypoint-initdb.d/initMere.sql
   
   dbtest:
     image: postgres:15

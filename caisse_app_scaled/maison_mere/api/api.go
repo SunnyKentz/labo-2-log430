@@ -28,7 +28,7 @@ func NewApp() {
 		if !mere.Login(employe, role) {
 			return c.Status(400).Render("login", nil)
 		}
-		return c.Redirect("/home", 200)
+		return c.Redirect("/home", 302)
 	})
 
 	app.Get("/home", authMiddleWare, func(c *fiber.Ctx) error {

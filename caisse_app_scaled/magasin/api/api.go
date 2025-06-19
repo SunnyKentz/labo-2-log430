@@ -35,7 +35,7 @@ func NewApp() {
 		if !caissier.InitialiserPOS(employe, caisse) {
 			return c.SendStatus(400)
 		}
-		return c.Redirect("/home", 200)
+		return c.Redirect("/home", 302)
 	})
 
 	app.Get("/home", authMiddleWare, func(c *fiber.Ctx) error {

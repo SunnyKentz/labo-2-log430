@@ -77,7 +77,12 @@ jobs:
       - name: Build app
         run: |
           mkdir -p out
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o out/app .
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o out/magasin/ ./caisse_app_scaled/magasin/app.go
+          cp -rf caisse_app_scaled/magasin/view out/magasin/
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o out/centre_logistique/ ./caisse_app_scaled/centre_logistique/app.go
+          cp -rf caisse_app_scaled/centre_logistique/view out/centre_logistique/
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o out/maison_mere/ ./caisse_app_scaled/maison_mere/app.go
+          cp -rf caisse_app_scaled/maison_mere/view out/maison_mere/
 
       - name: Log in to DockerHub
         uses: docker/login-action@v2

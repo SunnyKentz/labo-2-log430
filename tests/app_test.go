@@ -26,17 +26,21 @@ func BeforeAll() {
 	os.Setenv("DB_PASSWORD", "test_password")
 	os.Setenv("DB_USER", "test_user")
 	os.Setenv("DB_PORT", "5435")
+	os.Setenv("GATEWAY", "localhost")
+
 	go MERE.NewApp()
 	go MAG.NewApp()
 	go LOGIS.NewApp()
 	time.Sleep(time.Second * 1) // time for goroutine to startup
-	GATEWAY = "localhost"
 
 	// Login to get tokens
 	magToken = login("magasin", "http://localhost:8080")
 	mereToken = login("maison_mere", "http://localhost:8090")
 	logisToken = login("logistique", "http://localhost:8091")
 
+}
+func BeforeEach(t *testing.T) {
+	GATEWAY = "localhost"
 }
 
 func login(service, baseURL string) string {
