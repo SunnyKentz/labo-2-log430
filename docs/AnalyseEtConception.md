@@ -1,5 +1,10 @@
 # Documentation de l'Architecture
 ---
+## information préliminaire pour les labos 0,1,2:
+- lab 0 : https://github.com/SunnyKentz/labo-0-log430.git -> ce labo est privé mais Achref Samoud à access
+- lab 1 : https://github.com/SunnyKentz/labo-1-log430.git
+- lab 2 : https://github.com/SunnyKentz/labo-2-log430.git
+
 ## Introduction et Objectifs
 Ce document présente l'architecture d'un système dMagasin développé en Go. Le système est conçu pour gérer les opérations de vente et de retour de produits, de réaprovisionnement et de supervision de magasin dans un environnement distribué. L'architecture suit le modèle 4+1 de Philippe Kruchten, permettant une vue complète du système à travers différentes perspectives : logique, processus, déploiement, implémentation et cas d'utilisation.
 
