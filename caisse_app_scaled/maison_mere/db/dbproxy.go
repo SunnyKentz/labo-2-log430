@@ -9,6 +9,8 @@ import (
 	"sync"
 	"time"
 
+	. "caisse-app-scaled/caisse_app_scaled/utils"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	lg "gorm.io/gorm/logger"
@@ -37,7 +39,7 @@ func Init() {
 
 func (d *dbProxy) connect() {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		"172.17.0.1",         //docker gateway
+		GATEWAY,              //docker gateway
 		os.Getenv("DB_PORT"), //5434
 		instance.username,
 		instance.password,

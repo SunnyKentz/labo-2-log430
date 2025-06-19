@@ -43,7 +43,7 @@ func Init() {
 
 func (d *dbProxy) connect() {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		"172.17.0.1",
+		GATEWAY,
 		os.Getenv("DB_PORT"), //5432
 		instance.username,
 		instance.password,

@@ -6,7 +6,6 @@ import (
 	MAG "caisse-app-scaled/caisse_app_scaled/magasin/api"
 	"caisse-app-scaled/caisse_app_scaled/magasin/caissier"
 	MERE "caisse-app-scaled/caisse_app_scaled/maison_mere/api"
-	. "caisse-app-scaled/caisse_app_scaled/utils"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -38,9 +37,6 @@ func BeforeAll() {
 	mereToken = login("maison_mere", "http://localhost:8090")
 	logisToken = login("logistique", "http://localhost:8091")
 
-}
-func BeforeEach(t *testing.T) {
-	GATEWAY = "localhost"
 }
 
 func login(service, baseURL string) string {
