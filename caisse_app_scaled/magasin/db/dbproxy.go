@@ -43,7 +43,7 @@ func Init() {
 
 func (d *dbProxy) connect() {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		GATEWAY,
+		os.Getenv("GATEWAY"),
 		os.Getenv("DB_PORT"), //5432
 		instance.username,
 		instance.password,
@@ -180,6 +180,7 @@ func MettreAJourQuantiteParTrnasaction(t *models.Transaction, magasinNom string)
 
 func notifyMere(s string) {
 	s = "{\"message\":\"" + s + "\"}"
+
 	_, err := http.Post(API_MERE+"/api/notify", "application/json", bytes.NewBuffer([]byte(s)))
 	Errnotnil(err)
 }
